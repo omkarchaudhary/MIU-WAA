@@ -1,0 +1,45 @@
+mutation{
+  addBook(book:{
+    isbn:"123456",
+    title:"Interview",
+    author:"Omkar",
+    price: 320.0
+  }){
+    isbn,
+    author,
+    title,
+    price
+  }
+}
+
+mutation{
+  updateBook(book:{
+    isbn:"123456",
+    title:"Interview",
+    author:"Omkar",
+    price: 520.0
+  }){
+    isbn,
+    author,
+    title,
+    price
+  }
+}
+
+query{
+  getBookByIsbn(isbn:"123456"){
+		isbn,
+    author,
+    title
+  }
+}
+
+query{
+  searchBook(author:"Omkar"){
+    books{
+      title,
+      author
+    }
+  }
+}
+

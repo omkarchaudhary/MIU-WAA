@@ -1,0 +1,52 @@
+mutation {
+  createAccount(
+    accountNumber:12345,
+    accountHolder:"Omkar Chaudhary"
+  ){
+    accountNumber,
+    accountHolder
+  }
+}
+
+mutation{
+  deposit(
+    accountNumber: 123456,
+    amount: 1000){
+    accountNumber,
+    accountHolder,
+    balance,
+    transactionList{
+      amount,
+      transactionType
+    }
+  }
+}
+
+mutation{
+  withdraw(
+    accountNumber: 123456,
+    amount: 1000){
+    accountNumber,
+    accountHolder,
+    balance,
+    transactionList{
+      amount,
+      transactionType,
+      transactionDate
+    }
+  }
+}
+
+
+query{
+  getAccount(accountNumber: 123456){
+    accountNumber,
+    accountHolder,
+    balance,
+    transactionList{
+      amount,
+      transactionType,
+      transactionDate
+    }
+  }
+}
